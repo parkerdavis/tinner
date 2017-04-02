@@ -39,13 +39,13 @@ def loadTweets():
 # authMethod for original authentication of unique user. #
 
 def chooseAuthMethod():
-    c = input("\nSelection? \n 1: Login \n 2: Sign Up \n 3: Exit \nChoice: ")
+    c = input("\nSelection? \n\n 1: Login \n 2: Sign Up \n 3: Exit \n\nChoice: ")
 
-    if c == 1 or "Login":
+    if c == 1:
         return login()
-    elif c == 2 or "Sign Up":
+    elif c == 2:
         print("\n Sign up here: ")
-    elif c == 3 or "Exit" :
+    elif c == 3:
         print("\n Goodbye.")
     else:
         print("\n Not recognized. Try again.")
@@ -53,13 +53,15 @@ def chooseAuthMethod():
 # loop for choosing action #
 
 def loop():
-    c = input("\nSelection? \n 1: Tweet \n 2: Go to feed \n 3: Logout \nChoice: ")
+    c = input("\nSelection? \n\n 1: Tweet \n 2: Go to feed \n 3: Last Tweet \n 4: Logout \n\nChoice: ")
 
     if c == 1:
         CLC()
     elif c == 2:
         feed()
     elif c == 3:
+        print("\n Maybe you should try something that works.")
+    elif c == 4:
         print("\n Goodbye.")
     else:
         print("\n Not recognized. Try again.")
@@ -83,10 +85,11 @@ def PickleFunction():
             except EOFError:
                 break
         return unpickled
+        
 
-# loggedIn = False
-# while not loggedIn:
-#     loggedIn = chooseAuthMethod()
+loggedIn = False
+while not loggedIn:
+    loggedIn = chooseAuthMethod()
 
 while True:
     loop()
